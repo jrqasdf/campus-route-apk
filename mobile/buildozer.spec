@@ -9,7 +9,7 @@ source.include_exts = py,png,jpg,jpeg,txt,json,ttf,ttc
 source.include_patterns = core/*,assets/*
 
 version = 1.1
-requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.0,numpy==2.1.3,pillow
+requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.0,numpy==v1.26.4,pillow
 
 android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,READ_MEDIA_IMAGES
 android.archs = arm64-v8a
