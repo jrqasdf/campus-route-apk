@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -31,7 +32,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install buildozer cython==0.29.36
 
+      - name: 缓存 buildozer 工作目录
+        uses: actions/cache@v4
+        with:
+          path: mobile/.build/.buildozer
+          key: buildozer-${{ hashFiles('mobile/buildozer.spec', 'mobile/main.py') }}
+
       - name: 构建 APK
+        env:
+          JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
         run: bash mobile/build_apk.sh
 
       - uses: actions/upload-artifact@v4

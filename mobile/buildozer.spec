@@ -9,12 +9,13 @@ source.include_exts = py,png,jpg,jpeg,txt,json,ttf,ttc
 source.include_patterns = core/*,assets/*
 
 version = 1.1
-requirements = python3,kivy==2.3.0,pillow,numpy
+requirements = python3==3.11.9,kivy==2.3.0,pillow==10.3.0,numpy==1.26.4
 
 android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,READ_MEDIA_IMAGES
 android.archs = arm64-v8a
 android.minapi = 24
 android.api = 33
+android.ndk = 25b
 android.allow_backup = True
 android.accept_sdk_license = True
 
